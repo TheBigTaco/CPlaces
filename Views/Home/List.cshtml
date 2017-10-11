@@ -1,0 +1,15 @@
+@using Vacation.Models;
+@{
+  Layout = "_Layout";
+}
+
+<ul>
+  @foreach(Place place in Model)
+  {
+    <li><a href="/places/@place.Id">@place.Location</a></li>
+  }
+</ul>
+<form action="/place/clear" method="post">
+  <button type="submit" name="button">Clear</button>
+</form>
+<p><a href="/">Add More</a></p>
